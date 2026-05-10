@@ -14,13 +14,35 @@
     <div id="mainWrapper">
       <div id="incomes">
         <h2>INCOMES</h2>
+        <ul id="incomeList">
+          <li>
+            <label>Rent:</label>
+            <input type="number" placeholder="0,00" />
+          </li>
+          <li>
+            <label>Food:</label>
+            <input type="number" placeholder="0,00" />
+          </li>
+        </ul>
+        <span>Total revenue: </span>
       </div>
       <div id="expenses">
         <h2>EXPENSES</h2>
+        <ul id="expenseList">
+          <li>
+            <label>Rent:</label>
+            <input type="number" placeholder="0,00" />
+          </li>
+          <li>
+            <label>Food:</label>
+            <input type="number" placeholder="0,00" />
+          </li>
+        </ul>
+        <span>Total expenses: </span>
       </div>
     </div>
-    <button id="createExpenseBtn">Create an expense!!!</button>
-    <button id="createIncomeBtn">Create an income!!!</button>
+    <button id="createExpenseBtn">Add an expense</button>
+    <button id="createIncomeBtn">Add revenue source</button>
     <script src="../scripts/script.js"></script>
   </body>
 </html>
