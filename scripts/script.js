@@ -2,6 +2,17 @@ let incomeList = document.querySelector("#incomeList");
 let expenseList = document.querySelector("#expenseList");
 
 // Functions
+
+// Initialise the table for each type
+function initialiseTable(length, type, location) {
+  for (let i = 0; i < length; i++) {
+    createInput(type, location);
+  }
+}
+
+initialiseTable(2, "income", incomeList);
+initialiseTable(2, "expense", expenseList);
+
 //Type = expense, income
 function createInput(type = "Enter name", location) {
   let object = location.insertAdjacentHTML(
@@ -16,29 +27,20 @@ function createInput(type = "Enter name", location) {
   );
 }
 
-// Initialise the table for each type
-function initialiseTable(length, type, location) {
-  for (let i = 0; i < length; i++) {
-    createInput(type, location);
-  }
-}
-
-initialiseTable(2, "Income", incomeList);
-initialiseTable(2, "Expense", expenseList);
 
 function generateArray(type) {
   let array = [];
+  type = type.toLowerCase();
   let inputs = document.querySelectorAll(`.${type}Input`);
   for (let i = 0; i < inputs.length; i++) {
     array.push(inputs[i].value);
   }
   return array;
-  alert(array);
 }
 //let expenseArray = generateArray("expense");
 
 function sum(type) {
-  let incomeArray = generateArray("income");
+  let incomeArray = generateArray(type);
   let total = document.querySelector(`#total${type}`);
   //let inputs = document.querySelectorAll(`${type}Input`)
   let sum = 0;
@@ -47,7 +49,7 @@ function sum(type) {
   }
 
   total.value = sum;
-  alert(sum);
+
 }
 
 // sum(incomeArray, "Income");
@@ -73,6 +75,12 @@ document.addEventListener("click", () => {
   }
 });
 
+// Event listeners for summing each category
 document.querySelector("#calculateIncomeBTN").addEventListener("click", () => {
   sum("Income");
 });
+
+document.querySelector("#calculateExpenseBTN").addEventListener("click", () => {
+  sum("Expense");
+});
+
