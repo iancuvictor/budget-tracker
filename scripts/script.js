@@ -33,35 +33,26 @@ function createInput(type = "Enter name", location) {
   });
 }
 
-
-function generateArray(type) {
+function sum(type) {
+  arrType = type.toLowerCase();
   let array = [];
-  type = type.toLowerCase();
-  let inputs = document.querySelectorAll(`.${type}Input`);
+  let inputs = document.querySelectorAll(`.${arrType}Input`);
+  let sum = 0;
+  let total = document.querySelector(`#total${type}`);
+
   for (let i = 0; i < inputs.length; i++) {
     array.push(inputs[i].value);
   }
-  return array;
-}
-//let expenseArray = generateArray("expense");
 
-function sum(type) {
-  let incomeArray = generateArray(type);
-  let total = document.querySelector(`#total${type}`);
-  //let inputs = document.querySelectorAll(`${type}Input`)
-  let sum = 0;
-  for (i = 0; i < incomeArray.length; i++) {
-      sum = +sum + +incomeArray[i];
+  for (i = 0; i < array.length; i++) {
+    sum = +sum + +array[i];
   }
-
+  
   total.value = sum;
-
 }
 
 // sum(incomeArray, "Income");
 // sum(expenseArray, "Expense");
-
-
 
 // EVENT LISTENER
 // Event listener for ADDING EXPENSES
@@ -78,8 +69,8 @@ document.querySelector("#createIncomeBtn").addEventListener("click", () => {
 document.addEventListener("click", () => {
   if (event.target.classList.contains("selfDestroyBTN")) {
     event.target.parentElement.remove();
-    sum('Income');
-    sum('Expense');
+    sum("Income");
+    sum("Expense");
   }
 });
 
@@ -103,9 +94,8 @@ let totalIncome = document.querySelector("#totalIncome");
 let totalExpense = document.querySelector("#totalExpense");
 
 setInterval(() => {
-
-  document.querySelector("#bruteSavings").value = totalIncome.value - totalExpense.value;
+  document.querySelector("#bruteSavings").value =
+    totalIncome.value - totalExpense.value;
 }, 0);
 // totalIncome.addEventListener("change", () =>{
 // });
-
