@@ -78,6 +78,8 @@ document.querySelector("#createIncomeBtn").addEventListener("click", () => {
 document.addEventListener("click", () => {
   if (event.target.classList.contains("selfDestroyBTN")) {
     event.target.parentElement.remove();
+    sum('Income');
+    sum('Expense');
   }
 });
 
