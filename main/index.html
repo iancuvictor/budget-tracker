@@ -9,24 +9,31 @@
   <body>
     <nav id="navbar">
       <h1>BUDGET TRACKER</h1>
-      <a href="#"></a>
+      <a href="https://github.com/iancuvictor/budget-tracker">Github</a>
+      <a href="https://www.linkedin.com/in/iancuvictoriuliu/">Linkedin</a>
     </nav>
     <div id="mainWrapper">
-      <div id="incomes">
-        <h2>INCOMES</h2>
-        <ul id="incomeList">
-        </ul>
-        <span>Total revenue: <input id="totalIncome" disabled/></span>
-        <button id="createIncomeBtn">Add revenue source</button>
-        <!-- <button id="calculateIncomeBTN">Calculate Income</button> -->
-      </div>
-      <div id="expenses">
-        <h2>EXPENSES</h2>
-        <ul id="expenseList">
-        </ul>
-        <span>Total expenses: <input id="totalExpense" disabled/></span>
-        <button id="createExpenseBtn">Add an expense</button>
-        <!-- <button id="calculateExpenseBTN">Calculate Income</button> -->
+      <div id="tableWrapper">
+        <div id="incomes">
+          <div class="header">
+            <h2>INCOMES</h2>
+            <button id="createIncomeBtn">Add revenue source</button>
+          </div>
+          <ul id="incomeList">
+          </ul>
+          <span>Total revenue: <input id="totalIncome" disabled/></span>
+          <!-- <button id="calculateIncomeBTN">Calculate Income</button> -->
+        </div>
+        <div id="expenses">
+          <div class="header">
+            <h2>EXPENSES</h2>
+            <button id="createExpenseBtn">Add an expense</button>
+          </div>
+          <ul id="expenseList">
+          </ul>
+          <span>Total expenses: <input id="totalExpense" disabled/></span>
+          <!-- <button id="calculateExpenseBTN">Calculate Income</button> -->
+        </div>
       </div>
       <div id="resultsWrapper">
         <span>Brute savings: <input id="bruteSavings" type="number" disabled></span>
