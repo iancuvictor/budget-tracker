@@ -32,3 +32,11 @@ body{
     align-items: center;
     flex-direction: row;
 }
+
+#incomes{
+    background-color: green;
+}
+
+#expenses{
+    background-color: red;
+}
