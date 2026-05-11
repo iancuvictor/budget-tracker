@@ -60,12 +60,12 @@ function sum(type) {
 // EVENT LISTENER
 // Event listener for ADDING EXPENSES
 document.querySelector("#createExpenseBtn").addEventListener("click", () => {
-  createInput("Expense", expenseList);
+  createInput("expense", expenseList);
 });
 
 // Event listener for ADDING INCOMES
 document.querySelector("#createIncomeBtn").addEventListener("click", () => {
-  createInput("Income", incomeList);
+  createInput("income", incomeList);
 });
 
 // Event listener for REMOVING anything.
