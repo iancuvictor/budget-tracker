@@ -25,6 +25,12 @@ function createInput(type = "Enter name", location) {
     </li>
     `,
   );
+
+  type = type.slice(0, 1).toUpperCase() + type.slice(1);
+
+  this.addEventListener("input", () => {
+    sum(`${type}`);
+  });
 }
 
 
@@ -76,11 +82,28 @@ document.addEventListener("click", () => {
 });
 
 // Event listeners for summing each category
-document.querySelector("#calculateIncomeBTN").addEventListener("click", () => {
-  sum("Income");
-});
+// for incomes
+// let incomeInputs = document.querySelectorAll(".incomeInput");
+// for(let incomeInput of incomeInputs){
+//   incomeInput.addEventListener("input", () => {
+//     sum("Income");
+//   });
+// }
 
-document.querySelector("#calculateExpenseBTN").addEventListener("click", () => {
-  sum("Expense");
-});
+// let expenseInputs = document.querySelectorAll(".expenseInput");
+// for(let expenseInput of expenseInputs){
+//   expenseInput.addEventListener("input", () => {
+//     sum("Expense");
+//   });
+// }
+
+let totalIncome = document.querySelector("#totalIncome");
+let totalExpense = document.querySelector("#totalExpense");
+
+setInterval(() => {
+
+  document.querySelector("#bruteSavings").value = totalIncome.value - totalExpense.value;
+}, 0);
+// totalIncome.addEventListener("change", () =>{
+// });
 
