@@ -16,33 +16,26 @@
         <h2>INCOMES</h2>
         <ul id="incomeList">
           <li>
-            <label>Rent:</label>
-            <input type="number" placeholder="0,00" />
-          </li>
-          <li>
-            <label>Food:</label>
-            <input type="number" placeholder="0,00" />
-          </li>
+        <input type="text" placeholder="Type name">
+        <input type="number" class="incomeInput" placeholder="0,00"/>
+    </li>
+    <li>
+        <input type="text" placeholder="Type name">
+        <input type="number" class="incomeInput" placeholder="0,00"/>
+    </li>
         </ul>
-        <span>Total revenue: </span>
+        <span>Total revenue: <input id="totalIncome" disabled/></span>
+        <button id="createIncomeBtn">Add revenue source</button>
+        <button id="calculateIncomeBTN">Calculate Income</button>
       </div>
       <div id="expenses">
         <h2>EXPENSES</h2>
         <ul id="expenseList">
-          <li>
-            <label>Rent:</label>
-            <input type="number" placeholder="0,00" />
-          </li>
-          <li>
-            <label>Food:</label>
-            <input type="number" placeholder="0,00" />
-          </li>
         </ul>
-        <span>Total expenses: </span>
+        <span>Total expenses: <input id="totalExpense" disabled/></span>
+        <button id="createExpenseBtn">Add an expense</button>
       </div>
     </div>
-    <button id="createExpenseBtn">Add an expense</button>
-    <button id="createIncomeBtn">Add revenue source</button>
     <script src="../scripts/script.js"></script>
   </body>
 </html>
