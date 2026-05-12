@@ -25,16 +25,10 @@ function createInput(type = "Enter name", location) {
     </li>
     `,
   );
-
-  type = type.slice(0, 1).toUpperCase() + type.slice(1);
-
-  this.addEventListener("input", () => {
-    sum(`${type}`);
-  });
 }
 
 function sum(type) {
-  arrType = type.toLowerCase();
+  let arrType = type.toLowerCase();
   let array = [];
   let inputs = document.querySelectorAll(`.${arrType}Input`);
   let sum = 0;
@@ -47,12 +41,9 @@ function sum(type) {
   for (i = 0; i < array.length; i++) {
     sum = +sum + +array[i];
   }
-  
+
   total.value = sum;
 }
-
-// sum(incomeArray, "Income");
-// sum(expenseArray, "Expense");
 
 // EVENT LISTENER
 // Event listener for ADDING EXPENSES
@@ -76,26 +67,14 @@ document.addEventListener("click", () => {
 
 // Event listeners for summing each category
 // for incomes
-// let incomeInputs = document.querySelectorAll(".incomeInput");
-// for(let incomeInput of incomeInputs){
-//   incomeInput.addEventListener("input", () => {
-//     sum("Income");
-//   });
-// }
-
-// let expenseInputs = document.querySelectorAll(".expenseInput");
-// for(let expenseInput of expenseInputs){
-//   expenseInput.addEventListener("input", () => {
-//     sum("Expense");
-//   });
-// }
-
 let totalIncome = document.querySelector("#totalIncome");
 let totalExpense = document.querySelector("#totalExpense");
 
-setInterval(() => {
-  document.querySelector("#bruteSavings").value =
-    totalIncome.value - totalExpense.value;
-}, 0);
-// totalIncome.addEventListener("change", () =>{
-// });
+document.addEventListener("input", () => {
+  if (event.target.classList.contains("incomeInput")){
+    sum("Income");
+  } else if(event.target.classList.contains("expenseInput")) {
+    sum("Expense");
+  }
+  document.querySelector("#bruteSavings").value = totalIncome.value - totalExpense.value;
+});

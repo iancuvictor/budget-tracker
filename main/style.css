@@ -26,6 +26,18 @@ body {
   font-size: 28px;
 }
 
+#navbar a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.1s;
+}
+
+#navbar a:hover{
+    transition: 0.1s;
+    color: #918AFF;
+}
+
 #mainWrapper {
   display: flex;
   flex-direction: column;
