@@ -15,7 +15,7 @@ initialiseTable(2, "expense", expenseList);
 
 //Type = expense, income
 function createInput(type = "Enter name", location) {
-  let object = location.insertAdjacentHTML(
+  location.insertAdjacentHTML(
     "beforeend",
     `
     <li>
@@ -38,7 +38,7 @@ function sum(type) {
     array.push(inputs[i].value);
   }
 
-  for (i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     sum = +sum + +array[i];
   }
 
@@ -65,8 +65,6 @@ document.addEventListener("click", () => {
   }
 });
 
-// Event listeners for summing each category
-// for incomes
 let totalIncome = document.querySelector("#totalIncome");
 let totalExpense = document.querySelector("#totalExpense");
 
