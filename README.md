@@ -7,6 +7,12 @@ The project demonstrates:
 - localStorage accessing (saving, loading, parsing, bla bla)
 - Overall Javascript (basic level) proficiency
 
+What still needs to be done:
+- Mobile responsive design
+- Desktop responsive design
+- CSS Tweaks
+- Perhaps, adding more functionality later on
+
 I decided to switch to react sooner than anticipated so the project will remain as is (maybe some tweaks here and there every now and then).
 (You can track your budget using tools such as:
 - net "profit"(savings) calculator;
