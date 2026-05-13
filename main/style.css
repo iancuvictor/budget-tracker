@@ -12,7 +12,7 @@ body {
 
 #navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   margin: 0;
@@ -22,8 +22,16 @@ body {
   font-family: "Outfit", sans-serif;
 }
 
-#navbar h1 {
+#navbar h1, #navbar .nav_empty, #navbar .nav_right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 28px;
+  width: 250px;
+}
+
+.nav_right{
+  gap: 20px;
 }
 
 #navbar a {
@@ -61,6 +69,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
 #incomes {
@@ -84,4 +93,30 @@ body {
 .incomeInput,
 .expenseInput {
   width: 70px;
+}
+
+#incomeList, #expenseList{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#createExpenseBtn, #createIncomeBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+  color: #918AFF;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+  background-color: #000000;
+  transition: 0.1s;
+  border-width: 0;
+  padding: 10px;
+}
+
+#createExpenseBtn:hover, #createIncomeBtn:hover{
+  color: #fff;
+  transition: 0.1s;
 }

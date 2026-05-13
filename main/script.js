@@ -106,10 +106,12 @@ function sum(type) {
 // Event listener for ADDING INCOMES
 document.querySelector("#createIncomeBtn").addEventListener("click", () => {
   createInput("income", incomeList);
+  saveToStorage();
 });
 // Event listener for ADDING EXPENSES
 document.querySelector("#createExpenseBtn").addEventListener("click", () => {
   createInput("expense", expenseList);
+  saveToStorage();
 });
 
 // Event listener for REMOVING anything.
