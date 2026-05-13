@@ -1,5 +1,6 @@
 # Budget Tracker and Calculator
 [Live link for the project](https://iancu-budget-tracker.vercel.app/)
+
 I built this app using plain JavaScript, HTML and CSS.
 The project demonstrates:
 - DOM manipulation
