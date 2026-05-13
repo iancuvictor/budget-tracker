@@ -121,6 +121,8 @@ document.addEventListener("click", () => {
     sum("Income");
     sum("Expense");
     saveToStorage();
+    document.querySelector("#bruteSavings").value =
+    totalIncome.value - totalExpense.value;
   }
 });
 
