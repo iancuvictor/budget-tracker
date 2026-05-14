@@ -134,23 +134,31 @@ body {
 }
 
 span{
-  font-family: 'Outsider', sans-serif;
-  font-weight: bold;
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
 }
 
 ul{
   display: flex;
-  flex-direction: column; /* Keeps items stacked vertically */
-  align-items: center;    /* Centers the items horizontally */
-  padding-left: 0;        /* Removes default left space */
-  list-style-position: inside; /* Keeps bullets attached to the text */
+  flex-direction: column; 
+  align-items: center;           
+  list-style-position: outside;
+  list-style: decimal;
+}
+
+li:marker{
+  font-family: "Outfit", sans-serif;
+}
+
+.selfDestroyBTN{
+  cursor: pointer;
 }
 /* mobile */
 
 @media screen and (min-width: 300px) and (max-width:800px) {
   #navbar .nav_right {
-    justify-self: right;
-    padding-right: 20px;
+    justify-content: right;
+    padding-right: 30px;
   }
 
   #navbar .nav_empty {
@@ -158,7 +166,8 @@ ul{
   }
 
   #navbar h1{
-    padding-left: 20px;
+    justify-content: left;
+    padding-left: 30px;
     width: 50%;
   }
 
@@ -176,7 +185,7 @@ ul{
     width: 25%;
   }
 
-  #selfDestroyBTN{
+  .selfDestroyBTN{
     width: 20%;
   }
 }
