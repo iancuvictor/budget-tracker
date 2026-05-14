@@ -138,18 +138,45 @@ span{
   font-weight: bold;
 }
 
+ul{
+  display: flex;
+  flex-direction: column; /* Keeps items stacked vertically */
+  align-items: center;    /* Centers the items horizontally */
+  padding-left: 0;        /* Removes default left space */
+  list-style-position: inside; /* Keeps bullets attached to the text */
+}
 /* mobile */
 
 @media screen and (min-width: 300px) and (max-width:800px) {
   #navbar .nav_right {
     justify-self: right;
+    padding-right: 20px;
   }
 
   #navbar .nav_empty {
-    width: 0;
+    display: none;
+  }
+
+  #navbar h1{
+    padding-left: 20px;
+    width: 50%;
   }
 
   #tableWrapper{
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .incomeName, .expenseName{
+    width: 40%;
+  }
+
+  .incomeInput, .expenseInput{
+    width: 25%;
+  }
+
+  #selfDestroyBTN{
+    width: 20%;
   }
 }
