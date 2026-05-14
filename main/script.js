@@ -94,6 +94,7 @@ function sum(type) {
   let sum = 0;
   let total = document.querySelector(`#total${type}`);
   for (let i = 0; i < inputs.length; i++) {
+    inputs[i].value = +inputs[i].value;
     array.push(inputs[i].value);
   }
   for (let i = 0; i < array.length; i++) {
