@@ -140,7 +140,7 @@ span{
 
 /* mobile */
 
-@media (min-width: 400px) and (max-width:800px) {
+@media screen and (min-width: 300px) and (max-width:800px) {
   #navbar .nav_right {
     justify-self: right;
   }
