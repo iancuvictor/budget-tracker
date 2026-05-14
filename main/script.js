@@ -15,9 +15,7 @@ async function initialise() {
     loadFromStorage();
     await sum("Income");
     await sum("Expense");
-    let bruteSavingResult = totalIncome.value - totalExpense.value;
-    document.querySelector("#bruteSavings").value =
-      bruteSavingResult.toFixed(2);
+    await calcFinancialHealth()
   }
 }
 
@@ -259,21 +257,13 @@ document.addEventListener("change", async (event) => {
     try {
       await sum("Income");
       await sum("Expense");
+      calcFinancialHealth();
     } catch (error) {
       console.log(error);
       alert("error");
     }
   }
 });
-
-// async function getCurrencyRate(baseCurrency = "RON", targetCurrency = "EUR") {
-//   let response = await fetch(
-//     `https://api.frankfurter.dev/v2/rates?base=${targetCurrency}&quotes=${baseCurrency}`,
-//   );
-//   response = await response.json();
-//   let currencyRate = response[0].rate;
-//   return +currencyRate;
-// }
 
 async function sum(type) {
   let arrType = type.toLowerCase();
@@ -309,11 +299,13 @@ async function sum(type) {
 // Event listener for ADDING INCOMES
 document.querySelector("#createIncomeBtn").addEventListener("click", () => {
   createInput("income", incomeList);
+  calcFinancialHealth();
   saveToStorage();
 });
 // Event listener for ADDING EXPENSES
 document.querySelector("#createExpenseBtn").addEventListener("click", () => {
   createInput("expense", expenseList);
+  calcFinancialHealth();
   saveToStorage();
 });
 
@@ -323,10 +315,8 @@ document.addEventListener("click", async (event) => {
     event.target.parentElement.remove();
     await sum("Income");
     await sum("Expense");
+    await calcFinancialHealth();
     saveToStorage();
-    let bruteSavingResult = totalIncome.value - totalExpense.value;
-    document.querySelector("#bruteSavings").value =
-      bruteSavingResult.toFixed(2);
   }
 });
 
@@ -336,7 +326,26 @@ document.addEventListener("input", async (event) => {
   } else if (event.target.classList.contains("expenseInput")) {
     await sum("Expense");
   }
-  let bruteSavingResult = totalIncome.value - totalExpense.value;
-  document.querySelector("#bruteSavings").value = bruteSavingResult.toFixed(2);
+  await calcFinancialHealth();
   saveToStorage();
 });
+
+function calcFinancialHealth(){
+  let bruteSavingResult = totalIncome.value - totalExpense.value;
+  document.querySelector("#bruteSavings").value = bruteSavingResult.toFixed(2);
+  let finScore = Number(((bruteSavingResult / totalIncome.value) * 100).toFixed(2));
+  let financialResult = document.querySelector("#financial_result");
+  if(finScore >= 20){
+    financialResult.textContent = `Your financial score is: ${finScore}`;
+    financialResult.className = "greatFinScore";
+  } else if( finScore >= 10 && finScore < 20){
+    financialResult.textContent = `Your financial score is: ${finScore}`;
+    financialResult.className = "decentFinScore"; 
+  } else if(0 < finScore && finScore < 10) {
+    financialResult.textContent = `Your financial score is: ${finScore}`;
+    financialResult.className = "alertFinScore"; 
+  } else {
+    financialResult.textContent = `Just close the laptop bruv`;
+    financialResult.className = "brokeBoy"; 
+  }
+}

@@ -189,3 +189,31 @@ li:marker{
     width: 20%;
   }
 }
+
+.greatFinScore{
+  padding: 10px;
+  border-radius: 5px;
+  font-size: clamp(14px, 0.834vw, 16px);
+  background: rgb(64, 245, 88, 50%);
+}
+.decentFinScore{
+  padding: 10px;
+  border-radius: 5px;
+  font-size: clamp(14px, 0.834vw, 16px);
+  background: rgb(255, 226, 10, 50%);
+}
+
+.alertFinScore{
+  padding: 10px;
+  border-radius: 5px;
+  font-size: clamp(14px, 0.834vw, 16px);
+  background: rgb(245, 64, 72, 50%);
+}
+
+.brokeBoy{
+  padding: 10px;
+  border-radius: 5px;
+  font-size: clamp(14px, 0.834vw, 16px);
+  background-color: #000000;
+  color: #fff;
+}
