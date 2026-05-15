@@ -243,7 +243,7 @@ function createInput(
     `
     <li>
         <input type="text" class="${type}Name" placeholder="${type} name" required value="${name}">
-        <input type="number" class="${type}Input" placeholder="0,00" value="${value}"/>
+        <input type="number" inputmode="decimal" class="${type}Input" placeholder="0,00" value="${value}" />
         <select class="currencySelector" id="currency" name="currency" value=${currency}>
    ${options}
     </select>
@@ -273,8 +273,8 @@ async function sum(type) {
   let inputs = document.querySelectorAll(`.${arrType}Input`);
   let total = document.querySelector(`#total${type}`);
   for (let i = 0; i < inputs.length; i++) {
-    inputs[i].value = +inputs[i].value;
-    array.push(inputs[i].value);
+    // inputs[i].value = +inputs[i].value;
+    array.push(+inputs[i].value);
   }
   for (let i = 0; i < array.length; i++) {
     let selector = inputs[i].parentElement.children[2];
