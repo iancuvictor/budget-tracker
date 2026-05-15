@@ -82,10 +82,9 @@ body {
   align-items: center;
   height: 36px;
   width: 100%;
-  gap: 20px;
+  column-gap: 20px;
   container-type: size;
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 #createExpenseBtn,
@@ -245,6 +244,10 @@ li:marker {
   font-size: clamp(20px, 1.458vw, 28px);
 }
 
+#createIncomeBtn.mobileBtn, #createExpenseBtn.mobileBtn{
+  display: none;
+}
+
 /* mobile */
 
 @media screen and (min-width: 300px) and (max-width: 800px) {
@@ -273,6 +276,7 @@ li:marker {
   #incomes, #expenses{
     width: 100%;
     padding: 0;
+    gap: 20px;
   }
 
   li {
@@ -299,11 +303,11 @@ li:marker {
   #incomeList, #expenseList{
     margin-left: 0;
     padding-left: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
-  #createExpenseBtn,
-  #createIncomeBtn {
-    width: 40%;
+  #createIncomeBtn.desktopBtn, #createExpenseBtn.desktopBtn {
     display: none;
   }
 
@@ -314,8 +318,7 @@ li:marker {
   #financial_result{
     width: 100%;
   }
-  #createExpenseBtnMobile,
-  #createIncomeBtnMobile {
+  #createIncomeBtn.mobileBtn, #createExpenseBtn.mobileBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -330,8 +333,7 @@ li:marker {
   border-width: 0;
 }
 
-#createExpenseBtnMobile:hover,
-#createIncomeBtnMobile:hover {
+.mobileBtn:hover {
   color: #fff;
   transition: 0.1s;
 }
