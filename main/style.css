@@ -110,6 +110,10 @@ body {
   transition: 0.1s;
 }
 
+#createIncomeBtnMobile, #createExpenseBtnMobile{
+  display: none;
+}
+
 #incomes,
 #expenses {
   position: relative;
@@ -196,6 +200,8 @@ span {
 ul {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 li:marker {
@@ -290,13 +296,15 @@ li:marker {
     padding: 0;
     margin: 0;
   }
-  #incomeList {
-    margin-left: 0px;
+  #incomeList, #expenseList{
+    margin-left: 0;
+    padding-left: 0;
   }
 
   #createExpenseBtn,
   #createIncomeBtn {
     width: 40%;
+    display: none;
   }
 
   #resultsWrapper{
@@ -306,6 +314,27 @@ li:marker {
   #financial_result{
     width: 100%;
   }
+  #createExpenseBtnMobile,
+  #createIncomeBtnMobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Outfit", sans-serif;
+  color: #fff;
+  border-radius: 5px;
+  min-height: 40px;
+  width: 90%;
+  cursor: pointer;
+  background-color: rgb(14, 199, 103, 100%);;
+  transition: 0.1s;
+  border-width: 0;
+}
+
+#createExpenseBtnMobile:hover,
+#createIncomeBtnMobile:hover {
+  color: #fff;
+  transition: 0.1s;
+}
 }
 
 #financial_result {
