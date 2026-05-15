@@ -231,6 +231,7 @@ li:marker {
 }
 
 #resultsWrapper {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -284,6 +285,10 @@ li:marker {
   #tableWrapper {
     flex-direction: column;
   }
+
+  #resultsWrapper{
+    width: 400px;
+  }
 }
 
 @media screen and (max-width: 999.98px) {
@@ -334,7 +339,7 @@ li:marker {
   }
 
   #resultsWrapper{
-    width: 400px;
+    width: 400px
   }
 
   #financial_result{
@@ -360,6 +365,12 @@ li:marker {
   background-color: rgb(14, 199, 103, 100%);
   transition: 0.1s;
 }
+}
+
+@media screen and (max-width: 500px) {
+  #resultsWrapper{
+    width: 90%;
+  }
 }
 
 #financial_result {
