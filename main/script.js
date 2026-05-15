@@ -297,17 +297,29 @@ async function sum(type) {
 
 // EVENT LISTENERS
 // Event listener for ADDING INCOMES
-document.querySelector("#createIncomeBtn").addEventListener("click", () => {
-  createInput("income", incomeList);
+document.addEventListener('click', (event) => {
+  let buttonId = event.target.id;
+  if(buttonId === 'createIncomeBtn'){
+    createInput("income", incomeList);
   calcFinancialHealth();
   saveToStorage();
-});
-// Event listener for ADDING EXPENSES
-document.querySelector("#createExpenseBtn").addEventListener("click", () => {
-  createInput("expense", expenseList);
+  } else if(buttonId === 'createExpenseBtn') {
+    createInput("expense", expenseList);
   calcFinancialHealth();
   saveToStorage();
+  }
 });
+// document.querySelector("#createIncomeBtn").addEventListener("click", () => {
+//   createInput("income", incomeList);
+//   calcFinancialHealth();
+//   saveToStorage();
+// });
+// // Event listener for ADDING EXPENSES
+// document.querySelector("#createExpenseBtn").addEventListener("click", () => {
+//   createInput("expense", expenseList);
+//   calcFinancialHealth();
+//   saveToStorage();
+// });
 
 // Event listener for REMOVING anything.
 document.addEventListener("click", async (event) => {
