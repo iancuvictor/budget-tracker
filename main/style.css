@@ -263,6 +263,12 @@ li:marker {
 }
 
 @media screen and (max-width: 800px) {
+
+  #incomes, #expenses{
+    width: 100%;
+    padding: 0;
+  }
+
   li {
     width: 90%;
   }
