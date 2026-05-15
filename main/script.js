@@ -242,7 +242,7 @@ function createInput(
     "beforeend",
     `
     <li>
-        <input type="text" class="${type}Name" placeholder="${type} name" required value="${type.slice(0, 1).toUpperCase() + type.slice(1)} name">
+        <input type="text" class="${type}Name" placeholder="${type} name" required value="${name}">
         <input type="number" inputmode="decimal" class="${type}Input" placeholder="0,00" value="${value}" />
         <select class="currencySelector" id="currency" name="currency" value=${currency}>
    ${options}

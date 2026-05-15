@@ -57,6 +57,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   padding-bottom: 100px;
   width: 100%;
 }
@@ -235,13 +236,23 @@ li:marker {
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 20px;
+  gap: 10px;
+  outline-style: auto;
+  outline-width: 2px;
+  outline-color: #000000;
 }
 
 #incomes span,
 #expenses span,
-#resultsWrapper .result {
+.result {
   font-size: clamp(20px, 1.458vw, 28px);
+}
+
+.result{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 #createIncomeBtn.mobileBtn, #createExpenseBtn.mobileBtn{
@@ -312,7 +323,7 @@ li:marker {
   }
 
   #resultsWrapper{
-    width: 60%;
+    width: 90%;
   }
 
   #financial_result{
@@ -328,13 +339,14 @@ li:marker {
   min-height: 40px;
   width: 90%;
   cursor: pointer;
-  background-color: rgb(14, 199, 103, 100%);;
+  background-color: rgb(111, 217, 157, 100%);
   transition: 0.1s;
   border-width: 0;
 }
 
-.mobileBtn:hover {
+#createIncomeBtn.mobileBtn:hover, #createExpenseBtn.mobileBtn:hover{
   color: #fff;
+  background-color: rgb(14, 199, 103, 100%);
   transition: 0.1s;
 }
 }
@@ -346,27 +358,31 @@ li:marker {
 }
 
 .greatFinScore {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 5px;
   font-size: clamp(14px, 1.041vw, 20px);
   background: rgb(64, 245, 88, 50%);
 }
 .decentFinScore {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 5px;
   font-size: clamp(14px, 1.041vw, 20px);
   background: rgb(255, 226, 10, 50%);
 }
 
 .alertFinScore {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 5px;
   font-size: clamp(14px, 1.041vw, 20px);
   background: rgb(245, 64, 72, 50%);
 }
 
 .brokeBoy {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 5px;
   font-size: clamp(14px, 1.041vw, 20px);
   background-color: #000000;
