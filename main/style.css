@@ -116,19 +116,30 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Outfit", sans-serif;
-  color: #918aff;
+  color: #fff;
   border-radius: 5px;
   height: 120%;
   width: 50%;
   cursor: pointer;
-  background-color: #000000;
   transition: 0.1s;
   border-width: 0;
 }
 
-#createExpenseBtn:hover,
+#createExpenseBtn{
+  background-color: rgb(255, 10, 75, 70%);
+}
+
+#createExpenseBtn:hover {
+  background-color: rgb(255, 10, 75, 100%);
+  transition: 0.1s;
+}
+
+#createIncomeBtn {
+  background-color: rgb(25, 227, 111, 70%);
+}
+
 #createIncomeBtn:hover {
-  color: #fff;
+  background-color: rgb(25, 227, 111, 100%);
   transition: 0.1s;
 }
 
@@ -333,6 +344,10 @@ li:marker {
     width: 50%;
   }
 
+  h2{
+    margin-bottom: 5px;
+  }
+
   #tableWrapper{
     flex-direction: column;
   }
@@ -369,6 +384,8 @@ li:marker {
     padding-left: 0;
     margin-bottom: 0;
     padding-bottom: 0;
+    padding-top: 0px;
+    margin-top: 0px;
   }
 
   #createIncomeBtn.desktopBtn, #createExpenseBtn.desktopBtn {
@@ -397,7 +414,7 @@ li:marker {
 }
 
 #createIncomeBtn.mobileBtn{
-  background-color: rgb(111, 217, 157, 70%);
+  background-color: rgb(25, 227, 111, 70%);
 }
 
 #createExpenseBtn.mobileBtn{
@@ -405,7 +422,7 @@ li:marker {
 }
 
 #createIncomeBtn.mobileBtn:hover{
-  background-color: rgb(14, 199, 103, 100%);
+  background-color: rgb(25, 227, 111, 100%);
   transition: 0.1s;
 }
 
