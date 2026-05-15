@@ -41,14 +41,36 @@ body {
 }
 
 #navbar a {
+  position: relative;
   font-size: clamp(16px, 1.458vw, 28px);
   color: #fff;
   text-decoration: none;
   transition: 0.1s;
 }
 
-#navbar a:hover {
-  transition: 0.1s;
+/* copied from somewhere else, can't do this by myself tbh */
+
+#navbar a::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #918aff;
+  /* 1. Scale down horizontally to 0 to hide it */
+  transform: scaleX(0);
+  transform-origin: bottom center; /* Change to "bottom left" to slide from left to right */
+  transition: transform 0.1s ease-out;
+}
+
+#navbar a:hover::after {
+  transform: scaleX(1);
+  color: #918aff;
+}
+
+#navbar a:hover{
+  transition: 0.1s ease-out;
   color: #918aff;
 }
 
@@ -370,15 +392,25 @@ li:marker {
   min-height: 40px;
   width: 90%;
   cursor: pointer;
-  background-color: rgb(111, 217, 157, 100%);
   transition: 0.1s;
   border-width: 0;
 }
 
-#createIncomeBtn.mobileBtn:hover, #createExpenseBtn.mobileBtn:hover{
-  color: #fff;
+#createIncomeBtn.mobileBtn{
+  background-color: rgb(111, 217, 157, 70%);
+}
+
+#createExpenseBtn.mobileBtn{
+  background-color: rgb(255, 10, 75, 70%);
+}
+
+#createIncomeBtn.mobileBtn:hover{
   background-color: rgb(14, 199, 103, 100%);
   transition: 0.1s;
+}
+
+#createExpenseBtn.mobileBtn:hover{
+  background-color: rgb(255, 10, 75, 100%);
 }
 }
 
