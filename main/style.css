@@ -296,6 +296,21 @@ li:marker {
     flex-direction: column;
   }
 
+  #navbar .nav_right {
+    justify-content: right;
+    padding-right: 30px;
+  }
+
+  #navbar .nav_empty {
+    display: none;
+  }
+
+  #navbar h1 {
+    justify-content: left;
+    padding-left: 30px;
+    width: 50%;
+  }
+
   #tableWrapper{
     flex-direction: column;
   }
