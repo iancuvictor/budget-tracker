@@ -261,7 +261,7 @@ li:marker {
 
 /* mobile */
 
-@media screen and (min-width: 800px) and (max-width: 1200px) {
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
   #mainWrapper{
     flex-direction: row;
     align-items: baseline;
@@ -286,7 +286,7 @@ li:marker {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 999.98px) {
   #mainWrapper{
     flex-direction: column;
   }
@@ -334,7 +334,7 @@ li:marker {
   }
 
   #resultsWrapper{
-    width: 90%;
+    width: 400px;
   }
 
   #financial_result{
