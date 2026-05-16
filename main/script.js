@@ -247,7 +247,7 @@ function createInput(
         <select class="currencySelector" id="currency" name="currency" value=${currency}>
    ${options}
     </select>
-    <button class="selfDestroyBTN">delete</button>
+    <button class="selfDestroyBTN">X</button>
     </li>
     `,
   );
