@@ -185,7 +185,7 @@ body {
 }
 .incomeInput,
 .expenseInput {
-  width: 20%;
+  width: 25%;
 }
 .currencySelector {
   display: flex;
@@ -326,7 +326,7 @@ li:marker {
   }
 }
 
-@media screen and (max-width: 999.98px) {
+@media screen and (min-width: 500px) and (max-width: 999.98px) {
   #mainWrapper{
     flex-direction: column;
   }
@@ -433,11 +433,121 @@ li:marker {
 }
 }
 
-@media screen and (max-width: 500px) {
-  #resultsWrapper{
-    width: 90%;
+@media screen and (max-width: 499.98px) {
+  #mainWrapper{
+    flex-direction: column;
   }
 
+  #navbar .nav_right {
+    justify-content: right;
+    padding-right: 30px;
+  }
+
+  #navbar .nav_empty {
+    display: none;
+  }
+
+  #navbar h1 {
+    justify-content: left;
+    padding-left: 30px;
+    width: 50%;
+  }
+
+  h2{
+    margin-bottom: 5px;
+  }
+
+  #tableWrapper{
+    flex-direction: column;
+  }
+
+  #incomes, #expenses{
+    width: 100%;
+    padding: 0;
+    padding-bottom: 25px;
+    gap: 20px;
+  }
+
+  li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  .incomeName,
+  .expenseName {
+    min-height: 0;
+    height: 36px;
+    width: 35%;
+  }
+  .incomeInput,
+  .expenseInput {
+    min-height: 0;
+    height: 36px;
+    width: 29%;
+  }
+
+  .currencySelector {
+    min-height: 0;
+    height: 36px;
+    width: 19%;
+  }
+
+  .selfDestroyBTN {
+    padding: 0;
+    margin: 0;
+  }
+  #incomeList, #expenseList{
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+
+  #createIncomeBtn.desktopBtn, #createExpenseBtn.desktopBtn {
+    display: none;
+  }
+
+  #resultsWrapper{
+    width: 400px
+  }
+
+  #financial_result{
+    width: 100%;
+  }
+  #createIncomeBtn.mobileBtn, #createExpenseBtn.mobileBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Outfit", sans-serif;
+  color: #fff;
+  border-radius: 5px;
+  min-height: 40px;
+  width: 90%;
+  cursor: pointer;
+  transition: 0.1s;
+  border-width: 0;
+}
+
+#createIncomeBtn.mobileBtn{
+  background-color: rgb(25, 227, 111, 70%);
+}
+
+#createExpenseBtn.mobileBtn{
+  background-color: rgb(255, 10, 75, 70%);
+}
+
+#createIncomeBtn.mobileBtn:hover{
+  background-color: rgb(25, 227, 111, 100%);
+  transition: 0.1s;
+}
+
+#createExpenseBtn.mobileBtn:hover{
+  background-color: rgb(255, 10, 75, 100%);
+}
 
 }
 
